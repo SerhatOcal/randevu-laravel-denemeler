@@ -1,0 +1,26 @@
+ul,li{
+    padding:0;
+    margin:0;
+    list-style-type: none;
+}
+
+.select-times,.select-time{
+    padding:10px;
+    margin-bottom:5px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+}
+.successResponse{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+}
+.successResponse i{
+    font-size: 15em;
+    color: green;
+}
+.successResponse span{
+    font-size: 20px;
+}

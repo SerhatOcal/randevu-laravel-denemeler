@@ -1,0 +1,1 @@
+Merhaba {{$name}} , Randevunuz {{$date}} tarihinde {{$time}} saatleri arasındadır. Lütfen geç kalmayınız.
