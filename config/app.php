@@ -6,6 +6,7 @@ define("HATIRLATMA_TIPI_SMS",1);
 define("HATIRLATMA_TIPI_EMAIL",2);
 define("HATIRLATMA_CRON_DEFAULT",0);
 define("HATIRLATMA_CRON_ONAY",1);
+define("HATIRLATMA_CRON_RED",1);
 return [
 
     /*
@@ -45,7 +46,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -73,7 +74,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Istanbul',
 
     /*
     |--------------------------------------------------------------------------
@@ -86,7 +87,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'tr',
 
     /*
     |--------------------------------------------------------------------------
@@ -99,7 +100,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'tr',
 
     /*
     |--------------------------------------------------------------------------
@@ -112,7 +113,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'tr_TR',
 
     /*
     |--------------------------------------------------------------------------

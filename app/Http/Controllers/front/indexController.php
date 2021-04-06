@@ -10,4 +10,8 @@ class indexController extends Controller
     public function index(){
         return view('front.index');
     }
+
+    public function detay(){
+        return view("front.detay");
+    }
 }

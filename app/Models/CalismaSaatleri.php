@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CalismaSaatleri extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
     static function getString($calismaSaatiId){
         $control = CalismaSaatleri::where('id', $calismaSaatiId)->count();
@@ -15,7 +16,6 @@ class CalismaSaatleri extends Model
             $response = CalismaSaatleri::where('id', $calismaSaatiId)->get();
             return $response[0]['hours'];
         }
-
         return false;
     }
 }

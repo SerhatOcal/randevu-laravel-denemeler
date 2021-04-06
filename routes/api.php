@@ -20,12 +20,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['namespace' => 'api'], function (){
     Route::get('/calisma-saatleri/{date?}',[App\Http\Controllers\api\indexController::class,'getWorkingHours']);
+    Route::get('/calisma-saatleri-listesi',[App\Http\Controllers\api\indexController::class,'getCalismaSaatleriListesi']);
     Route::post('/randevu-olustur',[App\Http\Controllers\api\indexController::class,'randevuOlustur']);
+    Route::post('/randevu-detay',[App\Http\Controllers\api\indexController::class,'randevDetay']);
+    Route::post('/calisma-saatleri-kaydet',[App\Http\Controllers\api\indexController::class,'getCalismaSaatiKaydet']);
 
     Route::group(['namespace' => 'admin', 'prefix' => 'admin'],function (){
-        Route::get('/randevu-islemleri',[App\Http\Controllers\api\admin\indexController::class,'all']);
-
         Route::post('/islemler',[App\Http\Controllers\api\admin\indexController::class,'getIslemler']);
+        Route::post('/detay-not',[App\Http\Controllers\api\admin\indexController::class,'randevuDetayNotu']);
+        Route::get('/randevu-islemleri',[App\Http\Controllers\api\admin\indexController::class,'all']);
+        Route::get('/randevu-detay/{id}',[App\Http\Controllers\api\admin\indexController::class,'getRandevuDetay']);
         Route::get('/randevu-listesi', [App\Http\Controllers\api\admin\indexController::class,'getList']);
         Route::get('/randevu-gun-listesi', [App\Http\Controllers\api\admin\indexController::class,'getTodayList']);
         Route::get('/gecmis-randevu-listesi', [App\Http\Controllers\api\admin\indexController::class,'getLastList']);

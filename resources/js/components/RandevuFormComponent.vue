@@ -5,37 +5,38 @@
             <span>Randevunuz Başarılı ile Alınmıştır.</span>
         </div>
        <div class="complateForm" v-if="complateForm">
-            <div class="row">
+           <h3 class="text-center mb-5">Randevu oluşturmak için formu doldurunuz.</h3>
+           <div class="row">
             <div class="col-md-12">
                 <li v-for="i in errors" class="alert alert-danger">{{i}}</li>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4">
                 <div class="form-group">
                     <input type="text" class="form-control" v-model="name" placeholder="Ad Soyad ">
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="form-group">
                     <input type="text" class="form-control" v-model="email" placeholder="Email ">
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="form-group">
                     <input type="text" class="form-control" v-model="phone" v-mask="'###-###-##-##'" placeholder="Telefon ">
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="form-group">
                     <input type="date" @change="selectDate" :min="minDate" v-model="date" class="form-control">
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mb-3">
                 <ul class="select-times">
                     <li v-for="item in workingHours" class="select-time">
                         <input type="radio" v-if="item.isActive" v-model="workingHour" v-bind:value="item.id">
@@ -48,26 +49,26 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <textarea v-model="note" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea v-model="note" class="form-control" cols="30" rows="5"></textarea>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
+        <div class="row justify-content-center">
+            <div class="col-md-1">
                 <div class="form-group">
-                    <label>Sms</label>
                     <input v-model="notification_type" type="radio" value="0"/>
+                    <label>Sms</label>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-1">
                 <div class="form-group">
-                    <label>Email</label>
                     <input v-model="notification_type" type="radio" value="1"/>
+                    <label>Email</label>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 text-center">
                 <button class="btn btn-success" v-on:click="randevuOlustur">Randevu Oluştur</button>
             </div>
         </div>

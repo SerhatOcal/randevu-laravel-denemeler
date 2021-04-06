@@ -23,18 +23,15 @@ Vue.use(require('vue-resource'));
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('admin-onay-bekleyen-randevular', require('./components/Admin/AdminOnayBekleyenRandevularComponent.vue').default);
-Vue.component('admin-iptal-listesi', require('./components/Admin/AdminRandevuIptalComponent').default);
 Vue.component('admin-randevu-listesi', require('./components/Admin/AdminRandevuListesiComponenet').default);
-Vue.component('admin-randevu', require('./components/Admin/AdminRandevuComponent.vue').default);
-Vue.component('admin-bugun-randevu', require('./components/Admin/AdminBugunRandevuComponent').default);
-Vue.component('admin-gecmis-randevu', require('./components/Admin/AdminGecmisRandevuComponent').default);
 Vue.component('admin-component', require('./components/Admin/AdminComponent').default);
 Vue.component('admin-calisma-saatleri', require('./components/Admin/AdminCalismaSaatleriComponent').default);
 Vue.component('admin-calisma-saatleri-gun', require('./components/Admin/AdminCalismaSaatleriGunComponent').default);
+Vue.component('admin-randevu-modal', require('./components/Admin/AdminRandevuDetayModal').default);
 
 
 Vue.component('randevu-form', require('./components/RandevuFormComponent.vue').default);
+Vue.component('randevu-detay', require('./components/RandevuDetayComponent.vue').default);
 Vue.component('pagination', require('laravel-vue-pagination'));
 
 /**

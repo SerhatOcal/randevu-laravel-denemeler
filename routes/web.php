@@ -13,17 +13,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', [App\Http\Controllers\front\indexController::class, 'index'])->name('index');
+Auth::routes();
 Route::group(["prefix" => "cron"], function (){
     Route::get("/hatirlatma", function (){
-       Artisan::call("Hatirlatma:Start");
+        Artisan::call("Hatirlatma:Start");
     });
 });
-Auth::routes();
+
+Route::get('/', [App\Http\Controllers\front\indexController::class, 'index'])->name('index');
+Route::get('/detay', [App\Http\Controllers\front\indexController::class, 'detay'])->name('detay');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['namesapces' => 'admin', 'prefix' => 'admin', 'as' => 'admin.'], function(){
+Route::group(['namesapces' => 'admin', 'prefix' => 'admin', 'as' => 'admin.','middleware' => ["auth"]], function(){
     Route::get('/', [App\Http\Controllers\admin\indexController::class, 'index'])->name('index');
     Route::get("/calisma-saatleri", [\App\Http\Controllers\admin\indexController::class, "CalismaSaatleri"])->name("CalismaSaatleri");
 });
